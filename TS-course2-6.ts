@@ -5,6 +5,7 @@
 //basically, we can replace the types with other types
 
 // before
+// function name (param : typeParam): TypeOutput
 function beforeClone(source: Contacto): Contacto {
     return Object.apply({}, source)
 }
@@ -19,3 +20,5 @@ function afterClone<T>(source: T): T {
 function generics<T1,T2>(source:T1): T2{
     return
 }
+
+// And, generics can be applied into interfaces
