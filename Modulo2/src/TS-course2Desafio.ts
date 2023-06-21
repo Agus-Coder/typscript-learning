@@ -8,7 +8,8 @@ interface item {
 enum Status {
     Done,
     InProgress,
-    ToDo
+    nearbyToCompleted,
+    ToDo = "To do"
 }
 
 let first: item = {
@@ -39,8 +40,8 @@ function newItem(todo: string) {
     todoList.push(newTodo)
 }
 
-function getNextID(items) {
-    return items.reduce((max: number, x) => x.id > max ? max : x.id, 0) + 1
+function getNextID(items : item[]) {
+    return items.reduce((max: number, x) => x.id < max ? max : x.id, 0) + 1
 }
 
 newItem("test");

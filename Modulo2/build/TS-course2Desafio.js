@@ -2,7 +2,8 @@ var Status;
 (function (Status) {
     Status[Status["Done"] = 0] = "Done";
     Status[Status["InProgress"] = 1] = "InProgress";
-    Status[Status["ToDo"] = 2] = "ToDo";
+    Status[Status["nearbyToCompleted"] = 2] = "nearbyToCompleted";
+    Status["ToDo"] = "To do";
 })(Status || (Status = {}));
 let first = {
     id: 1,
@@ -26,7 +27,7 @@ function newItem(todo) {
     todoList.push(newTodo);
 }
 function getNextID(items) {
-    return items.reduce((max, x) => x.id > max ? max : x.id, 0) + 1;
+    return items.reduce((max, x) => x.id < max ? max : x.id, 0) + 1;
 }
 newItem("test");
 console.log(todoList);
