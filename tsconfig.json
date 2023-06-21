@@ -5,5 +5,8 @@
         "noEmit": false,
         "allowJs": true,
         "checkJs": true,
-    }
+    },
+    "include": [
+        "src/**/*"
+    ]
 }
