@@ -5,10 +5,17 @@ interface item {
     completedOn?: Date,
 }
 
+/* 
+
+const ToDoItems: item[] = [
+
+]
+
+*/
+
 enum Status {
-    Done,
-    InProgress,
-    nearbyToCompleted,
+    Done = "Done",
+    InProgress = "In progress",
     ToDo = "To do"
 }
 
@@ -27,23 +34,29 @@ let second: item = {
 
 let todoList: item[] = [first, second]
 
-function newItem(todo: string) {
+function newItem(todo: string):item {
 
     const id = getNextID(todoList)
 
-    const newTodo: item = {
+    const newTodo = {
         id,
         title: todo,
         status: Status.ToDo
     }
 
     todoList.push(newTodo)
+
+    return newTodo
 }
 
-function getNextID(items : item[]) {
+function getNextID(items : item[]):number {
     return items.reduce((max: number, x) => x.id < max ? max : x.id, 0) + 1
 }
 
 newItem("test");
 
 console.log(todoList);
+
+// Correct! Nice work!
+
+
