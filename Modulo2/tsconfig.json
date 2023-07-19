@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "outDir": "build",
+        "noEmit": false,
+        "allowJs": true,
+        "checkJs": true,
+    },
+    "include": [
+        "src/**/*"
+    ]
+}
